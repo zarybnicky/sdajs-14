@@ -9,9 +9,12 @@ app.get('/hi', (request, response) => {
 
 let counter = 0;
 
+// let responseObject = { number: 5} ;
+// let responseJSON   ='{"number":5}';
+
 app.get('/query', (request, response) => {
     console.log(counter);
-    response.send(`${counter}`);
+    response.send(JSON.stringify({ number: counter }));
 });
 
 app.get('/plus', (request, response) => {
