@@ -7,7 +7,6 @@ fetch('/query').then((response) => {
 }).then((text) => {
     counterText.innerText = text;
 });
-
 plusButton.addEventListener('click', function () {
     const request = new XMLHttpRequest();
     request.addEventListener('load', function () {
@@ -16,7 +15,6 @@ plusButton.addEventListener('click', function () {
     request.open('GET', '/plus');
     request.send();
 });
-
 minusButton.addEventListener('click', function () {
     fetch('/minus').then((response) => {
         return response.text();
