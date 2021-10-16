@@ -9,11 +9,12 @@ fetch('/query').then((response) => {
 });
 
 plusButton.addEventListener('click', function () {
-    fetch('/plus').then((response) => {
-        return response.text();
-    }).then((text) => {
-        counterText.innerText = text;
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+        counterText.innerText = this.responseText;
     });
+    request.open('GET', '/plus');
+    request.send();
 });
 
 minusButton.addEventListener('click', function () {
