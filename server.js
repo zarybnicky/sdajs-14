@@ -1,7 +1,10 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 
 app.use(express.static('public'));
+// =>
+// app.get('/index.html', ...)
+// app.get('/app.js', ...)
 
 app.get('/hi', (request, response) => {
     response.send('Hi, World!');
@@ -16,7 +19,6 @@ app.get('/query', (request, response) => {
     console.log(counter);
     response.send(JSON.stringify({ number: counter }));
 });
-
 app.get('/plus', (request, response) => {
     counter++;
     setTimeout(() => {
@@ -24,7 +26,6 @@ app.get('/plus', (request, response) => {
         response.send(`${counter}`);
     }, 500);
 });
-
 app.get('/minus', (request, response) => {
     counter--;
     console.log(counter);

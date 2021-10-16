@@ -1,10 +1,32 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+     .post {
+         margin-bottom: 10px;
+         font-weight: bold;
+     }
+    </style>
+  </head>
   <body>
 
-    <button id="minus">-</button>
-    <span id="counter">0</span>
-    <button id="plus">+</button>
+    <div>
+      <button id="minus">-</button>
+      <span id="counter">0</span>
+      <button id="plus">+</button>
+    </div>
+
+    <div id="post-list">
+    </div>
+
+    <!-- 
+         <div>
+         <form id="name-form">
+         <input type="text" name="name" />
+         <button type="submit">Say hi!</button>
+         </form>
+         <span id="name-response"></span>
+         </div>
+    -->
 
     <script
         src="./app.js"

@@ -1,6 +1,7 @@
 const plusButton = document.getElementById('plus');
 const minusButton = document.getElementById('minus');
 const counterText = document.getElementById('counter');
+const postListDiv = document.getElementById('post-list');
 
 fetch('/query').then((response) => {
     return response.json();
@@ -31,4 +32,15 @@ plusButton.addEventListener('click', function () {
     });
     request.open('GET', '/plus');
     request.send();
+});
+
+fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {
+    return response.json();
+}).then((posts) => {
+    posts.forEach((post) => {
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
+        postDiv.innerText = `${post.id}: ${post.title}`;
+        postListDiv.appendChild(postDiv);
+    });
 });
