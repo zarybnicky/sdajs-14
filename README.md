@@ -1,5 +1,7 @@
 # sdajs-14
 
+[![asciicast](https://asciinema.org/a/442819.svg)](https://asciinema.org/a/442819)
+
 Pro zprovoznění stačí čtyři kroky: v Git Bash 
 
 1. `git clone https://github.com/zarybnicky/sdajs-14`
