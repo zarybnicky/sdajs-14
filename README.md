@@ -20,3 +20,11 @@ Po spuštění server naslouchá na portu 3000 na vašem počítači, server by 
 Z prohlížeče se dotazujeme na server pomocí funkce `fetch()`, kterou nasměrujeme na adresu `/query` - taková adresa s lomítkem na začátku je absolutní cesta, která se odkazuje na aktuální server (v našem případě `localhost:3000`) a je k názvu serveru připojena, tj. `localhost:3000/query`.
 
 Skript server-query.js slouží pro demonstraci použití knihovny `node-fetch`, pomocí které se můžeme i v prostředí Node posílat HTTP požadavky.
+
+## Odkazy
+
+- Repo na GitLabu: https://gitlab.com/zarybnicky/sdajs-14
+- Repo na GitHubu: https://github.com/zarybnicky/sdajs-14/
+- NPMJS.com: https://www.npmjs.com/
+- TodoMVC: https://todomvc.com/
+- Express.js: http://expressjs.com/en/4x/api.html
