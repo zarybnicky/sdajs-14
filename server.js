@@ -1,13 +1,17 @@
 import express from 'express';
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public/'));
 // =>
 // app.get('/index.html', ...)
 // app.get('/app.js', ...)
 
-app.get('/hi', (request, response) => {
-    response.send('Hi, World!');
+app.get('/hi', function respondHi(request, response) {
+    response.send('<html><body><div style="background:blue">Hi, World!</div></body></html>');
+});
+
+app.post('/hi', function respondHi(request, response) {
+    response.send('<html><body><div style="background:blue">Hi, World!</div></body></html>');
 });
 
 let counter = 0;
@@ -33,6 +37,6 @@ app.get('/minus', (request, response) => {
 });
 
 app.listen(3000, () => {
-  console.log('App listening at http://127.0.0.1:3000');
-  console.log('App listening at http://localhost:3000');
+    console.log('App listening at http://127.0.0.1:3000');
+    console.log('App listening at http://localhost:3000');
 });

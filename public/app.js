@@ -17,7 +17,7 @@ fetch('/query').then((response) => {
  *     counterText.innerText = json.number;
  * }); */
 
-minusButton.addEventListener('click', function () {
+minusButton.addEventListener('click', function() {
     fetch('/minus').then((response) => {
         return response.text();
     }).then((text) => {
@@ -25,13 +25,12 @@ minusButton.addEventListener('click', function () {
     });
 });
 
-plusButton.addEventListener('click', function () {
-    const request = new XMLHttpRequest();
-    request.addEventListener('load', function () {
-        counterText.innerText = this.responseText;
+plusButton.addEventListener('click', function() {
+    fetch('/plus').then((response) => {
+        return response.text();
+    }).then((text) => {
+        counterText.innerText = text;
     });
-    request.open('GET', '/plus');
-    request.send();
 });
 
 fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {

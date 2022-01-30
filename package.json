@@ -1,16 +1,13 @@
 {
-  "name": "sdajs-14",
-  "version": "1.0.0",
-  "description": "",
+    "name": "sdajs-14",
+    "version": "1.0.0",
+    "description": "",
+    "author": "",
+    "license": "ISC",
     "main": "index.js",
     "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "node-fetch": "^3.0.0"
-  }
+    "dependencies": {
+        "express": "^4.17.1",
+        "node-fetch": "^3.0.0"
+    }
 }
