@@ -6,12 +6,27 @@ app.use(express.static('public/'));
 // app.get('/index.html', ...)
 // app.get('/app.js', ...)
 
+let table = [
+    { id: 1, name: "Alex", surname: "Jones" },
+    { id: 2, name: "Alex", surname: "Jones" },
+    { id: 3, name: "Alex", surname: "Jones" },
+    { id: 4, name: "Alex", surname: "Jones" },
+    { id: 5, name: "Alex", surname: "Jones" },
+    { id: 6, name: "Alex", surname: "Jones" },
+    { id: 7, name: "Alex", surname: "Jones" },
+    { id: 8, name: "Alex", surname: "Jones" },
+];
+app.get("/table", (request, response) => {
+    response.json(table);
+})
+
+
 app.get('/hi', function respondHi(request, response) {
-    response.send('<html><body><div style="background:blue">Hi, World!</div></body></html>');
+    response.send('<html><body><div style="background:blue">Hi, World (GET)!</div></body></html>');
 });
 
 app.post('/hi', function respondHi(request, response) {
-    response.send('<html><body><div style="background:blue">Hi, World!</div></body></html>');
+    response.send('<html><body><div style="background:blue">Hi, World (POST)!</div></body></html>');
 });
 
 let counter = 0;
@@ -23,6 +38,7 @@ app.get('/query', (request, response) => {
     console.log(counter);
     response.send(JSON.stringify({ number: counter }));
 });
+
 app.get('/plus', (request, response) => {
     counter++;
     setTimeout(() => {
@@ -30,6 +46,7 @@ app.get('/plus', (request, response) => {
         response.send(`${counter}`);
     }, 500);
 });
+
 app.get('/minus', (request, response) => {
     counter--;
     console.log(counter);

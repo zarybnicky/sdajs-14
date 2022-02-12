@@ -33,13 +33,13 @@ plusButton.addEventListener('click', function() {
     });
 });
 
-fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {
-    return response.json();
-}).then((posts) => {
-    posts.forEach((post) => {
-        const postDiv = document.createElement('div');
-        postDiv.classList.add('post');
-        postDiv.innerText = `${post.id}: ${post.title}`;
-        postListDiv.appendChild(postDiv);
-    });
-});
+// fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {
+//     return response.json();
+// }).then((posts) => {
+//     posts.forEach((post) => {
+//         const postDiv = document.createElement('div');
+//         postDiv.classList.add('post');
+//         postDiv.innerText = `${post.id}: ${post.title}`;
+//         postListDiv.appendChild(postDiv);
+//     });
+// });

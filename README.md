@@ -1,5 +1,7 @@
 # sdajs-14
 
+## Instrukce
+
 [![asciicast](https://asciinema.org/a/442819.svg)](https://asciinema.org/a/442819)
 
 Pro zprovoznění stačí čtyři kroky: v Git Bash 
@@ -32,12 +34,67 @@ Skript server-query.js slouží pro demonstraci použití knihovny `node-fetch`,
 
 ## JavaScript
 
+### Control structures
+```js
+let i = 0;
+while (true) {
+    prikaz();
+    i++;
+    if (i > 3) {
+        break;
+    }
+}
+
+prikaz();
+prikaz();
+prikaz();
+
+for (let i = 0; i < 3; i++) {
+    prikaz();
+}
+
+let i = 0;
+while (true) {
+    if (i < 3) {
+        break;
+    }
+
+    prikaz()
+
+    i++;
+}
+
+let i = 0;
+i < 3
+prikaz()
+i++  // i = 1
+i < 3
+prikaz()
+i++  // i = 2
+i < 3
+prikaz()
+i++  // i = 3
+i > 3
+
+
+const pole = [1, 2, 3, 4, 5, 6]
+//            0, 1, 2, 3, 4, 5
+
+for (let i = 0; i < pole.length; i++) {
+    pole[i]
+}
+
+pole.forEach(x => console.log(x))
+```
+
 ### JavaScript variable scope
+
 ```js
 // global variables
-const x;
+const x = {};
 let y;
 // var z;
+
 
 // global function fn
 function fn() {
@@ -111,4 +168,205 @@ function fnWithFn() {
 }
 fnWithFn();
 // NOT fnNested
+```
+
+
+
+
+### String functions
+- access
+    - `"abc"[2] === "c"`
+- length
+    - `"".length === 0`
+- includes/starts/ends
+    - `"'The quick brown fox...".includes("fox") === true`
+    - `'Is this a question?'.endsWith("?") === true`
+    - `"To be, or not to be".startsWith("To be") === true`
+- test (RegEx, https://regexr.com/)
+    - `"123 456 789".test(/[0-9]{3}[ \-]?[0-9]{3}[ \-]?[0-9]{3}/) === true`
+- repeat
+    - `"*".repeat(3) == "*" + "*" + "*" == "***"`
+- slice
+    - `"1234".slice(1, 3) == "23"`
+- split
+    - `"1,2,3".split(",") == ["1", "2", "3"]`
+
+### Array functions
+- concatenation
+    - `[1, 2].concat([3, 4]) == [1, 2, 3, 4]`
+- length
+    - `list.length`
+- indexing
+    - `list[0]`
+    - `list[0] += 5`
+    - `list[0] = 5`
+    - `[1, 2, 3][0]`
+- forEach
+    - `[1, 2, 3].forEach(x => console.log(x))`
+- inserting
+    - `list.push(4)`
+    - `list.unshift(4)`
+    - `x.splice(1, 0, "4")`
+- deleting
+    - `list.pop()`
+    - `list.shift()`
+    - `x.splice(1, 1)`
+- contains
+    - `[1, 2, 3].contains(5) === false`
+    - `numbers.contains(1) === 1`
+- find/findIndex
+    - `[1, 2, 3, 4, 5].find(x => x > 3) === 4`
+- filter
+    - `[1, 2, 3, 4, 5].filter(x => x > 3) === [4, 5]`
+- map
+    - `[1, 2, 3].map(x => x + 3) === [4, 5, 6]`
+- slice
+    - `[1, 2, 3, 4].slice(1, 3) == [2, 3]`
+- join
+    - `[1, 2, 3].join("-") == "1" + "-" + "2" + "-" + "3" == "1-2-3"`
+    - `[1, 2, 3].join("") == "1" + "" + "2" + "" + "3" == "123"`
+
+### Objects (dictionaries, key/value pairs)
+
+```js
+const obj = {
+    key: "value",
+    key2: 5,
+}
+const obj2 = {
+    a: "",
+    b: 1,
+}
+const joined = {
+    obj: obj,
+    obj2: obj2,
+}
+
+// "Spread operator"
+const spread = { ...obj, ...obj2 };
+spread == Object.assign({}, obj, obj2)
+// { ...{k: 5}, ...{k: 3}, k: 2 } === {k: 2}
+
+obj.key = 1;
+obj.key3 = 3;
+
+obj.key == "value"
+obj["key"] == "value"
+
+delete obj.key;
+
+const k = "key"
+obj[k] == "value"
+
+console.log(obj[k])  // "value"
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+Object.keys(object1) == ["a", "b", "c"]
+Object.values(object1) == ["somestring", 42, false]
+
+```
+
+### Booleans
+- true, false
+- negation
+    - `!false === true`
+    - `!true === false`
+
+### Numbers
+```js
+1 + 1
+1 * 1
+2 ** 3 == 8
+Math.sqrt(4) === 2
+Math.log10(10) === 1
+Math.random()
+Math.round(0.500001) == 0.5
+
+3 == 3.0
+
+let n = 0;
+n++;
+n += 1;
+n = n + 1;
+
+n--;
+n -= 1;
+
+n *= 2;
+n /= 2;
+```
+
+### JSON
+
+```js
+
+```
+
+### Morse code
+```js
+MORSE_CODE = {
+    '.-': 'A',
+    '-...': 'B',
+    '-.-.': 'C',
+    '-..': 'D',
+    '.': 'E',
+    '..-.': 'F',
+    '--.': 'G',
+    '....': 'H',
+    '..': 'I',
+    '.---': 'J',
+    '-.-': 'K',
+    '.-..': 'L',
+    '--': 'M',
+    '-.': 'N',
+    '---': 'O',
+    '.--.': 'P',
+    '--.-': 'Q',
+    '.-.': 'R',
+    '...': 'S',
+    '-': 'T',
+    '..-': 'U',
+    '...-': 'V',
+    '.--': 'W',
+    '-..-': 'X',
+    '-.--': 'Y',
+    '--..': 'Z',
+    '-----': '0',
+    '.----': '1',
+    '..---': '2',
+    '...--': '3',
+    '....-': '4',
+    '.....': '5',
+    '-....': '6',
+    '--...': '7',
+    '---..': '8',
+    '----.': '9',
+    '.-.-.-': '.',
+    '--..--': ',',
+    '..--..': '?',
+    '.----.': "'",
+    '-.-.--': '!',
+    '-..-.': '/',
+    '-.--.': '(',
+    '-.--.-': ')',
+    '.-...': '&',
+    '---...': ':',
+    '-.-.-.': ';',
+    '-...-': '=',
+    '.-.-.': '+',
+    '-....-': '-',
+    '..--.-': '_',
+    '.-..-.': '"',
+    '...-..-': '$',
+    '.--.-.': '@',
+    '...---...': 'SOS',
+    "": " "
+}
+
+const input = '.... . -.--   .--- ..- -.. .'
+console.log(input.split(" ").map(item => MORSE_CODE[item]).join(""))
 ```
