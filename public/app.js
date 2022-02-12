@@ -1,3 +1,4 @@
+
 const plusButton = document.getElementById('plus');
 const minusButton = document.getElementById('minus');
 const counterText = document.getElementById('counter');
@@ -43,3 +44,22 @@ plusButton.addEventListener('click', function() {
 //         postListDiv.appendChild(postDiv);
 //     });
 // });
+
+
+fetch('/table').then((response) => {
+    console.log(response)
+    return response.json();
+}).then((obj) => {
+    counterText.innerText = obj.number;
+    console.log(obj)
+    let table = document.createElement('table')
+    let tr = document.createElement('tr')
+    let td = document.createElement('td')
+    td.innerText = 'love'
+    table.appendChild(tr)
+    tr.appendChild(td)
+    const tabulka = document.querySelector('#table')
+    tabulka.appendChild(table)
+    // <table> <tr> <td> </td> </tr> </table>
+});
+
