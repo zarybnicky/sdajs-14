@@ -17,7 +17,7 @@ let table = [
     { id: 8, name: "Alex", surname: "Jones" },
 ];
 app.get("/table", (request, response) => {
-    response.json(table);
+    response.send(JSON.stringify(table));
 })
 
 

@@ -302,8 +302,27 @@ n /= 2;
 
 ### JSON
 
-```js
+- JavaScript Object Notation
+- Transportní (serializační) formát pro JavaScriptové hodnoty
+- JSON.stringify převádí JS hodnotu na JSON řetězec
+- JSON.parse načítá JSON řetězec a vytvoří z něj JS hodnotu
 
+```js
+JSON.stringify({k: "v"}) == "{\"k\": \"v\"}"
+JSON.parse("{\"k\": \"v\"}")   == {k: "v"}
+```
+
+```json
+5
+"b"
+true, false
+null
+
+[1, 2, 3]
+
+{
+    "k": ["v"]
+}
 ```
 
 ### Morse code
