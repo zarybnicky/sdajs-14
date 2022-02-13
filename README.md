@@ -56,13 +56,8 @@ for (let i = 0; i < 3; i++) {
 }
 
 let i = 0;
-while (true) {
-    if (i < 3) {
-        break;
-    }
-
+while (i > 3) {
     prikaz()
-
     i++;
 }
 
@@ -87,6 +82,30 @@ for (let i = 0; i < pole.length; i++) {
 }
 
 pole.forEach(x => console.log(x))
+
+const httpStatusCode = 200; // 304, 404, 401, 403
+if (httpStatusCode === 200) {
+    // case 200:
+} else if (httpStatusCode === 304) {
+    // case 304:
+} else {
+    // default:
+}
+
+switch (httpStatusCode) {
+    case 200:
+        // pokud OK
+        break;
+    case 304:
+        // pokud Not Modified
+        break;
+    case 404:
+        // pokud Not Found
+        break;
+    default:
+        // pokud není znám
+        break;
+}
 ```
 
 ### JavaScript variable scope
@@ -227,6 +246,20 @@ fnWithFn();
 - join
     - `[1, 2, 3].join("-") == "1" + "-" + "2" + "-" + "3" == "1-2-3"`
     - `[1, 2, 3].join("") == "1" + "" + "2" + "" + "3" == "123"`
+
+```js
+function contains(array, searchEl) {
+    // return array.contains(element);
+
+    let elementInArray = false;
+    array.forEach(el => {
+        if (el === searchEl) {
+            elementInArray = true;
+        }
+    });
+    return elementInArray;
+}
+```
 
 ### Objects (dictionaries, key/value pairs)
 
