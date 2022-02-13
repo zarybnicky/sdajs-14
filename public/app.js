@@ -62,6 +62,7 @@ plusButton.addEventListener('click', function() {
 
 fetch('/table').then(res => res.json()).then((list) => {
     let table = document.createElement('table')
+    table.className = "users-table"
     document.querySelector('#table').appendChild(table)
 
     let tr = document.createElement('tr')
