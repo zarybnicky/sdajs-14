@@ -1,5 +1,8 @@
 import express from 'express';
+import expressOasGenerator from 'express-oas-generator';
+
 const app = express();
+expressOasGenerator.init(app, {});
 
 app.use(express.static('public/'));
 // =>
@@ -19,7 +22,6 @@ let table = [
 app.get("/table", (request, response) => {
     response.send(JSON.stringify(table));
 })
-
 
 app.get('/hi', function respondHi(request, response) {
     response.send('<html><body><div style="background:blue">Hi, World (GET)!</div></body></html>');

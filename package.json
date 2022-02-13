@@ -8,6 +8,7 @@
     "type": "module",
     "dependencies": {
         "express": "^4.17.1",
+        "express-oas-generator": "^1.0.41",
         "node-fetch": "^3.0.0"
     }
 }

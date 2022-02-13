@@ -23,6 +23,8 @@ Z prohlížeče se dotazujeme na server pomocí funkce `fetch()`, kterou nasměr
 
 Skript server-query.js slouží pro demonstraci použití knihovny `node-fetch`, pomocí které se můžeme i v prostředí Node posílat HTTP požadavky.
 
+OpenAPI dokumentace je k dispozici na URL http://localhost:3000/api-docs/v3/#/
+
 ## Odkazy
 
 - Repo na GitLabu: https://gitlab.com/zarybnicky/sdajs-14
