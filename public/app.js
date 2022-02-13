@@ -1,4 +1,3 @@
-
 const plusButton = document.getElementById('plus');
 const minusButton = document.getElementById('minus');
 const counterText = document.getElementById('counter');
@@ -45,21 +44,50 @@ plusButton.addEventListener('click', function() {
 //     });
 // });
 
+// <table>
+//   <tr>
+//     <th> (table header)  ID
+//     <th> (table header)  Name
+//     <th> (table header)  Surname
+//   <tr> (table row)
+//     <td> (table cell)  id
+//     <td> (table cell)  name
+//     <td> (table cell)  surname
+//   <tr> (table row)
+//     <td> (table cell)  id
+//     <td> (table cell)  name
+//     <td> (table cell)  surname
 
-fetch('/table').then((response) => {
-    console.log(response)
-    return response.json();
-}).then((obj) => {
-    counterText.innerText = obj.number;
-    console.log(obj)
+// React
+
+fetch('/table').then(res => res.json()).then((list) => {
     let table = document.createElement('table')
-    let tr = document.createElement('tr')
-    let td = document.createElement('td')
-    td.innerText = 'love'
-    table.appendChild(tr)
-    tr.appendChild(td)
-    const tabulka = document.querySelector('#table')
-    tabulka.appendChild(table)
-    // <table> <tr> <td> </td> </tr> </table>
-});
+    document.querySelector('#table').appendChild(table)
 
+    let tr = document.createElement('tr')
+    table.appendChild(tr)
+    let thId = document.createElement('th')
+    let thName = document.createElement('th')
+    let thSurname = document.createElement('th')
+    thId.innerText = "ID"
+    thName.innerText = "Name"
+    thSurname.innerText = "Surname"
+    tr.appendChild(thId)
+    tr.appendChild(thName)
+    tr.appendChild(thSurname)
+
+    list.forEach(row => {
+        let tr = document.createElement('tr')
+        table.appendChild(tr)
+
+        let tdId = document.createElement('td')
+        let tdName = document.createElement('td')
+        let tdSurname = document.createElement('td')
+        tdId.innerText = row.id
+        tdName.innerText = row.name
+        tdSurname.innerText = row.surname
+        tr.appendChild(tdId)
+        tr.appendChild(tdName)
+        tr.appendChild(tdSurname)
+    });
+});
