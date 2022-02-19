@@ -259,6 +259,12 @@ function contains(array, searchEl) {
     });
     return elementInArray;
 }
+
+// Destructuring
+const variable = [1, 2];
+const [elementOne, elementTwo] = variable;
+// elementOne === undefined
+// elementTwo === undefined
 ```
 
 ### Objects (dictionaries, key/value pairs)
@@ -267,7 +273,10 @@ function contains(array, searchEl) {
 const obj = {
     key: "value",
     key2: 5,
-}
+};
+obj["key2"] === 5;
+obj.key2 === 5;
+
 const obj2 = {
     a: "",
     b: 1,
@@ -303,6 +312,101 @@ const object1 = {
 Object.keys(object1) == ["a", "b", "c"]
 Object.values(object1) == ["somestring", 42, false]
 
+
+// Destructuring objects
+const user = {
+    name: "Jmeno",
+    surname: "Prijmeni",
+};
+const { name, surname } = user;
+const { name: jmeno } = user;
+console.log(jmeno);
+
+const sayHello = ({ name }) => "Hello, " + name;
+console.log(sayHello({ name: "..." }));
+```
+
+### OOP
+```js
+
+const user = {
+    name: "Jmeno",
+    surname: "Prijmeni",
+    getCeleJmeno() {
+        return this.name + " " + this.surname;
+    },
+};
+user.getCeleJmeno() == "Jmeno Prijmeni";
+
+class User {
+    constructor(name, surname) {
+        this.name = name;
+        this.surname = surname;
+        this.celeJmeno = name + " " + surname;
+        this.plat = 0;
+    }
+    getCeleJmeno() {
+        return this.name + " " + this.surname;
+    }
+}
+
+const adam = new User("Adam", "Ondřej");
+
+adamObj = {
+    name: "Adam",
+    surname: "Ondřej",
+    celeJmeno: "Adam Ondřej",
+    plat: 0,
+    getCeleJmeno() {
+        return this.name + " " + this.surname;
+    },
+}
+
+adam.plat = 25000;
+adamObj.plat = 25000;
+adam.getCeleJmeno() == "Adam Ondřej"
+adamObj.getCeleJmeno() == "Adam Ondřej";
+
+
+
+
+class Nameable {
+    constructor(name) {
+        this.name = name;
+    }
+    sayHello() {
+        return "Hello, " + this.name;
+    }
+}
+
+class Person extends Nameable {
+    constructor(name, surname) {
+        super(name);
+        this.surname = surname;
+    }
+    getFullName() {
+        return this.name + " " + this.surname;
+    }
+}
+
+const jirka = new Person("Jiří", "Martinů");
+
+const jirkaObj = {
+    name: "Jiří",
+    surname: "Martinů",
+    getFullName() {
+        return this.name + " " + this.surname;
+    },
+    get fullName() {
+        return this.name + " " + this.surname;
+    }
+    sayHello() {
+        return "Hello, " + this.name;
+    },
+};
+
+jirkaObj.getFullName();
+jirkaObj.fullName;
 ```
 
 ### Booleans
