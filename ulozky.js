@@ -111,3 +111,7 @@ kalkulacka("+", 5, 10) === 15
 kalkulacka("-", 5, 10) === -5
 kalkulacka("*", 5, 10) === 50
 kalkulacka("/", 5, 10) === .5
+
+
+
+
