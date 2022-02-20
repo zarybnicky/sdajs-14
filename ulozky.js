@@ -414,27 +414,86 @@ console.log(person2);
 
 // Bleskové úlohy 3
 // 17.1. Vytvoř pole o pěti prvcích, vypiš z něj pátý.
+const pole3 = [1, 2, 3, 4, 5];
+console.log(pole3[4]);
+
 // 17.2. Vytvoř řetězec o alespoň 5 znacích, vypiš z něj první znak.
-// 17.3. Vytvoř objekt uživetele s dvěmi klíči (name, surname). Vypiš celé jméno uživatele.
+const retezec3 = "123456";
+console.log(retezec3[0]);
+
+// 17.3. Vytvoř objekt uživatele s dvěmi klíči (name, surname). Vypiš celé jméno uživatele.
+const object = { surname: "B", name: "A" };
+// console.log(Object.values(object));
+// console.log(Object.values(object).join(" "));
+// console.log([1, 2, 3].join(", "));
+console.log(object.name + " " + object.surname);
+
 // 17.4. Definuj funkci se třemi argumenty (třemi objekty), vypiš v ní třetí argument. Zavolej ji.
+function triArgumenty2(a, b, c) {
+    console.log(c);
+}
+triArgumenty2({ a: "" }, { b: "" }, { c: "" });
+
 // 17.5. Vytvoř funkci o jednom argumentu (řetězci), která vrátí tento řetězec dvakrát. Zavolej ji.
-// 17.6. Vytvoř funkci o jednou argumentu (objektu), která vrátí všechny klíče tohoto objektu. Zavolej ji.
+function dvakrat(retezec) {
+    return retezec + retezec;
+}
+console.log(dvakrat("ABC"));
+
+// 17.6. Vytvoř funkci o jednom argumentu (objektu), která vrátí všechny klíče tohoto objektu. Zavolej ji.
+function kliceObjektu(objekt) {
+    return Object.keys(objekt);
+}
+const obj3 = { a: "", b: "", c: "" };
+console.log(kliceObjektu(obj3));
+
 // 17.7. Definuj funkci bez argumentů, která vrátí libovolný objekt.
 //       Zavolej ji, ulož výsledek do proměnné a vypiš hodnotu libovolného klíče.
-// 17.8. Vytvoř pole nějakých čísel, jedním řádkem kódu z něj vyfiltruj lichá čísla, výsledek vypiš.
+function bezArgumentu() {
+    return { a: "b", c: "d" }
+}
+vysledek = bezArgumentu();
+console.log(vysledek.a);
 
+// 17.8. Vytvoř pole nějakých čísel, jedním řádkem kódu z něj vyfiltruj lichá čísla, výsledek vypiš.
+const poleCisel = [1, 11, 12, 98]
+console.log(poleCisel.filter(n => n % 2 === 0));
 
 
 
 
 
 // 18.0. Vytvoř funkci o jednom argumentu, která vrací pole, které bude argument obsahovat dvakrát ([x, x]), zavolej ji.
+function dvakratDoPole(x) {
+    return [x, x];
+}
+console.log(dvakratDoPole([1, 2, 3]));
+
 // 18.1. Vytvoř funkci bez argumentů, která vrátí funkci jinou, vnořenou, která vypíše "5".
 //       ( = v tělě funkce vytvoř funkci a vrať ji).
 //       Zavolej ji, ulož si výsledek a zavolej tento výsledek.
-// 18.2. BONUS: Vytvoř funkci s jedním argumentem. Typ argumentu bude funkce, kterou v těle zavolej.
-//       Zavolej vytvořenou funkci s libovolnou funkcí.
+function vnorenaFunkce() {
+    function vypisPet() {
+        console.log("z vnorene funkce");
+    }
+    return vypisPet;
 
+    // return () => { console.log("vnorena") };
+}
+vysledek = vnorenaFunkce();
+vysledek();
+console.log(vysledek);
+
+// 18.2. Vytvoř funkci s jedním argumentem. Typ argumentu bude funkce, kterou v těle zavolej.
+//       Zavolej vytvořenou funkci s libovolnou funkcí.
+function dostanuFunkci(funkce) {
+    console.log("před voláním");
+    funkce();
+    console.log("po volání");
+}
+dostanuFunkci(() => {
+    console.log("predavana funkce");
+})
 
 // 20. Bonus: Login form with AJAX = fetch()
 // 20.1. Vytvořte dva <input>y (name="login", name="password") a jeden <button>
