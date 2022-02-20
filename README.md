@@ -299,6 +299,10 @@ obj["key"] == "value"
 
 delete obj.key;
 
+// { key: 1 }
+delete obj["key"];
+// { }
+
 const k = "key"
 obj[k] == "value"
 

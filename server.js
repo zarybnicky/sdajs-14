@@ -5,6 +5,7 @@ const app = express();
 expressOasGenerator.init(app, {});
 
 app.use(express.static('public/'));
+app.use(express.json({ type: '*/*' }));
 // =>
 // app.get('/index.html', ...)
 // app.get('/app.js', ...)
@@ -21,6 +22,26 @@ let table = [
 ];
 app.get("/table", (request, response) => {
     response.send(JSON.stringify(table));
+})
+
+app.post("/search", (request, response) => {
+    const { search } = request.body;
+    response.json({
+        results: [
+            { data: search },
+            { data: search },
+            { data: search }
+        ],
+    })
+})
+
+app.post("/login", (request, response) => {
+    const { name, password } = request.body;
+    if (name === "admin" && password === "heslo") {
+        response.json({ status: "ok", message: "Logged in" });
+    } else {
+        response.json({ status: "error", message: "Invalid login" });
+    }
 })
 
 app.get('/hi', function respondHi(request, response) {

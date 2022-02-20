@@ -92,3 +92,25 @@ fetch('/table').then(res => res.json()).then((list) => {
         tr.appendChild(tdSurname)
     });
 });
+
+
+
+const searchBar = document.querySelector("input[name=\"search\"]");
+const searchBtn = document.querySelector("#searchBtn");
+const searchResults = document.querySelector("#searchResults");
+
+searchBtn.addEventListener("click", (event) => {
+    console.log(searchBar.value);
+
+    fetch("/search", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            search: searchBar.value
+        }),
+    }).then((response) => {
+        return response.json()
+    }).then((data) => {
+        searchResults.textContent = JSON.stringify(data);
+    });
+});

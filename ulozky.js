@@ -279,3 +279,166 @@ console.log(sayHello({ name: "..." }));
 // 11.2. Pridejte metodu otevri(), která nastaví `otevrene`
 // 11.3. Pridejte metodu zavri(), která nastaví `otevrene` na false
 // 11.4. Pridejte getter popis(), který popiše dveře, jejich barvu a stav
+
+// 12. Počítadlo: ve skriptu napojeném na HTML dokument
+// 12.1. Vytvořte proměnnou counter a tlačítko s nápisem "+1" a ID counterAdd
+// 12.2. Napojte tlačítko tak, že se po jeho stisknutí zvětší proměnná counter o 1.
+// 12.3. Přidejte div s ID counterText.
+//       Po stisknutí tlačítka a zvětšení proměnné counter vypište její hodnotu jako text do tohoto divu (textContent)
+
+// 14. Object/dict + funkce
+// 14.1. Vytvoř objekt databazeUzivatelu
+//       { 1: { name: "Eva", surname: "Nová" }, 2: { name: "Jirka", surname: "Nový" } }
+// 14.2. Vytvoř funkci najdiNejvetsiIdUzivatele()
+// 14.2.1. Ziskat všechny klíče objektu jako seznam
+// 14.2.2. Najít maximum z tohoto seznamu a vrátit ho.
+// 14.3. Vytvoř funkci vytvorUzivatele(jmeno, prijmeni),
+//       která přidá záznam do databazeUzivatelu s ID o jedna větším než najdiNejvetsiIdUzivatele()
+//       a vrátí toto ID
+// 14.4. Vytvoř funkci odstranUzivatele(id), která z databazeUzivatelu odstrani uzivatele s tímto ID
+
+
+// 15. Bleskové úlohy
+// 15.1. Definuj funkci se třemi argumenty, první číslo, druhý řetězec, třetí argument bude objekt, a zavolej ji.
+function fceSeTremiParametry(a, b, c) {}
+const fceSeTremiParametry2 = (a, b, c) => {}
+fceSeTremiParametry(5, "a", {});
+
+// 15.2. Definuj funkci bez argumentů, která vrací číslo 42. Zavolej ji, ulož výsledek do proměnné a vypiš tuto proměnnou.
+const vraci42 = () => 42;
+
+function vraci_42() {
+    return 42;
+}
+const promenna = vraci42();
+console.log(promenna);
+
+// 15.3. Vytvoř objekt. Na dalším řádku do něj přidej další klíč a hodnotu, tento klíč pak z objektu smaž.
+const objekt = {};
+objekt.klic = "hodnota";
+delete objekt.klic;
+
+// 15.4. Vytvoř pole. Do pole programově přidej tři čísla, odeber pak poslední z nich.
+pole = []
+pole.push(1, 2, 3);
+pole.pop()
+console.log(pole);
+
+// 15.5. Vytvoř pole nějakých čísel, jedním řádkem kódu z něj vyfiltruj sudá čísla, výsledek vypiš.
+pole = [1, 11, 12, 98]
+console.log(pole.filter(n => n % 2 === 1))
+
+// 15.6. Vytvoř objekt s nějakými daty. Získej z něj (programově) všechny klíče a všechny hodnoty a vypiš je.
+const obj = {
+    "key": "hodnota",
+    "cislo": 5,
+    "objekt": {}
+};
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+
+// 15.7. Vytvoř řetězec. Vytvoř další proměnnou, která bude obsahovat tento řetězec 2x za sebou ("+"!!!).
+//       Vypiš jejich délku.
+const retezec = "123"
+const retezecX2 = retezec.repeat(2);
+console.log(retezec.length);
+console.log(retezecX2.length);
+
+// 15.8. Definuj funkci plusJedna(n), která vrátí n + 1. Zavolej ji a vypiš výsledek.
+function plusJedna(n) {
+    return n + 1;
+}
+console.log(plusJedna(5));
+
+// 15.9. Definuj funkci jeVetsiNezPet s jedním argumentem, která vrací, jestli je větší než pět. Zavolej ji a vypiš.
+function jeVetsiNezPet(n) {
+    return n > 5;
+
+    // if (n > 5) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+}
+console.log(jeVetsiNezPet(6))
+console.log(jeVetsiNezPet(3))
+
+// 15.10. Definuj funkci zvetsiPole s jedním argumentem, která do pole, které dostane, přidá [5, 6, 7]. (concat!!!)
+function zvetsiPole(pole) {
+    // return pole.concat([5, 6, 7]);
+    return [...pole, 5, 6, 7];
+}
+console.log(zvetsiPole([0, 0, 0]));
+
+
+// 16. Bleskové úlohy 2
+// 16.1. Vytvoř číselnou proměnnou, vytvoř jinou proměnnou do které uložíte první proměnnou plus 5.
+const cislo = 45
+const cislo2 = cislo + 5;
+
+// 16.2. Ulož řetězec do proměnné, přidej k němu na konec "!!!" ("+")
+const retezec2 = "Hello";
+console.log(retezec2 + "!!!");
+
+// 16.3. Vytvoř objekt s jedním klíčem a hodnotou, vytáhni hodnotu u tohoto klíče a vypiš ji. 
+//       Přidej do objektu další dvojici klíč/hodnota.
+const obj2 = { vybaveni: "obrazovka" };
+console.log(obj2.vybaveni);
+obj2.zasuvka = "poloprazdna";
+
+Object.values(obj2) === ["poloprazdna", "obrazovka"];
+
+// 16.4. Vytvoř pole se třemi prvky, vyber z pole druhý prvek (index, []) a vypiš ho.
+const pole2 = ["Já", "Ty", "On"];
+//             0,    1,    2
+console.log(pole2[1]);
+
+// 16.5. Vytvoř funkci se třemi argumenty. Druhý argument bude číslo, které funkce vezme, přičte k němu 5 a vrátí ho.
+//       Vypiš výsledek volání s argumenty ({}, 0, ""). Vypiš výsledek volání s argumenty ("1", "2", "3").
+function triArgumenty(jedna, dva, tri) {
+    return dva + 5;
+}
+console.log(triArgumenty({}, 0, ""));
+console.log(triArgumenty("1", "2", "3"));
+"2" + 5 === "25"
+
+// 16.6. Vytvoř třídu Person, jejíž konstruktor bude mít jeden argument `name`. Vytvoř instanci této třídy a vypiš ji.
+class Person2 {
+    constructor(name) {
+        this.name = name;
+    }
+}
+const person2 = new Person2("Name");
+console.log(person2);
+
+
+// Bleskové úlohy 3
+// 17.1. Vytvoř pole o pěti prvcích, vypiš z něj pátý.
+// 17.2. Vytvoř řetězec o alespoň 5 znacích, vypiš z něj první znak.
+// 17.3. Vytvoř objekt uživetele s dvěmi klíči (name, surname). Vypiš celé jméno uživatele.
+// 17.4. Definuj funkci se třemi argumenty (třemi objekty), vypiš v ní třetí argument. Zavolej ji.
+// 17.5. Vytvoř funkci o jednom argumentu (řetězci), která vrátí tento řetězec dvakrát. Zavolej ji.
+// 17.6. Vytvoř funkci o jednou argumentu (objektu), která vrátí všechny klíče tohoto objektu. Zavolej ji.
+// 17.7. Definuj funkci bez argumentů, která vrátí libovolný objekt.
+//       Zavolej ji, ulož výsledek do proměnné a vypiš hodnotu libovolného klíče.
+// 17.8. Vytvoř pole nějakých čísel, jedním řádkem kódu z něj vyfiltruj lichá čísla, výsledek vypiš.
+
+
+
+
+
+
+// 18.0. Vytvoř funkci o jednom argumentu, která vrací pole, které bude argument obsahovat dvakrát ([x, x]), zavolej ji.
+// 18.1. Vytvoř funkci bez argumentů, která vrátí funkci jinou, vnořenou, která vypíše "5".
+//       ( = v tělě funkce vytvoř funkci a vrať ji).
+//       Zavolej ji, ulož si výsledek a zavolej tento výsledek.
+// 18.2. BONUS: Vytvoř funkci s jedním argumentem. Typ argumentu bude funkce, kterou v těle zavolej.
+//       Zavolej vytvořenou funkci s libovolnou funkcí.
+
+
+// 20. Bonus: Login form with AJAX = fetch()
+// 20.1. Vytvořte dva <input>y (name="login", name="password") a jeden <button>
+// 20.2. Po kliknutí na tlačítko, vypiš do konzole hodnoty <input>ů
+// 20.3. Odeslat hodnoty formuláře na endpoint /login jako JSON = fetch()
+// 20.4. Pokud přijde {status:"error"}, zobrazit formulář červeně, 
+//       pokud bude {status:"ok"}, tak ho schovat
